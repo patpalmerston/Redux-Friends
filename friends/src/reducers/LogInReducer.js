@@ -1,14 +1,9 @@
-import { FETCH_FRIEND_START, FETCH_FRIEND_SUCCESS, FETCH_FRIEND_FAILURE } from '../actions';
+import * as actionTypes from '../actions';
 
 const initialState = {
   deletingFriend: false,
   fetchingFriends: false,
-  friends: {
-    id: 1,
-    name: 'Joe',
-    age: 24,
-    email: 'joe@lambdaschool.com',
-  },
+  friends: [],
   loggingIn: false,
   savingFriends: false,
   updatingFriend: false,
@@ -18,6 +13,11 @@ const initialState = {
 export const logReducer = (state = initialState, action) => {
   console.log('reducer', action)
   switch (action.type) {
+    case actionTypes.FETCH_FRIEND_START:
+    return {
+      ...state,
+      fetchingFriends: true
+    };
 
     default: return state;
   }
