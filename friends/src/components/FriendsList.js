@@ -1,10 +1,15 @@
 import React from 'react'
 
+import Friend from './Friend';
 
 class FriendsList extends React.Component {
-  render(){
+  render(props){
     return(
-      <div> I am the FriendsList Component </div>
+      <div>
+        {props.friends.map(friend => {
+          return <Friend key={friend.name} friend={friend}/>
+        })}
+      </div>
     )
   }
 }
