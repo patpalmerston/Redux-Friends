@@ -35,7 +35,7 @@ login = e => {
   render() {
     return (
       <div className='login-card'>
-        <form>
+        <form onSubmit={this.login}>
           <input
             type='text'
             name='username'

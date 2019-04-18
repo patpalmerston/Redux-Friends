@@ -43,7 +43,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         fetchingFriends: false,
-        friends: [...action.payload.data]
+        friends: [...action.payload]
         //is it data or results?
       }
 

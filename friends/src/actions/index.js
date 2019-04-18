@@ -27,7 +27,11 @@ export const login = credentials => dispatch => {
 export const getFriends = () => dispatch => {
   dispatch({ type: FETCH_FRIEND_START });
 
-  axios.get('http://localhost:5000/api/friends')
+  axios.get('http://localhost:5000/api/friends', {
+    headers: {
+      Authorization: localStorage.getItem('token')
+    }
+  })
     .then(res => dispatch({
       type: FETCH_FRIEND_SUCCESS,
       payload: res.data
