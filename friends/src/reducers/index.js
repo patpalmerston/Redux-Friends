@@ -18,7 +18,7 @@ const initialState = {
   error: null
 }
 
-export const friendsReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   console.log('reducer', action)
   switch (action.type) {
     case FETCH_FRIEND_START:
@@ -46,3 +46,6 @@ export const friendsReducer = (state = initialState, action) => {
     default: return state;
   }
 }
+
+export default reducer;
+
