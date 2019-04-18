@@ -10,8 +10,18 @@ export const FETCH_FRIEND_SUCCESS = 'FETCH_FRIEND_SUCCESS';
 export const FETCH_FRIEND_FAILURE = 'FETCH_FRIEND_FAILURE';
 
 
-export const login = () => dispatch => {
-  dispatch({ type: LOGIN_START })
+export const login = credentials => dispatch => {
+  dispatch({ type: LOGIN_START });
+
+  return axios.post('http://localhost:5000/api/login', credentials)
+    .then(res => dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data
+    }))
+    .catch(err => dispatch({
+      type: LOGIN_FAILURE,
+      payload: 'Error Unable to log in!'
+    }))
 }
 
 export const getFriends = () => dispatch => {
