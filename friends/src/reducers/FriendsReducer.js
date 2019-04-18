@@ -13,7 +13,6 @@ const initialState = {
 export const logReducer = (state = initialState, action) => {
   console.log('reducer', action)
   switch (action.type) {
-    case LOGIN_START:
     case FETCH_FRIEND_START:
     return {
       ...state,
