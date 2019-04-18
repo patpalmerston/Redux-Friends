@@ -1,7 +1,7 @@
 // Reducers
 import { combineReducers } from 'redux';
-import { logReducer } from './LogInReducer'
+import { friendsReducer } from './FriendsReducer'
 
 export default combineReducers({
-  logReducer
+  friendsReducer
 })

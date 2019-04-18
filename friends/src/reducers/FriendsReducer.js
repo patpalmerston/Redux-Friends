@@ -10,7 +10,7 @@ const initialState = {
   error: null
 }
 
-export const logReducer = (state = initialState, action) => {
+export const friendsReducer = (state = initialState, action) => {
   console.log('reducer', action)
   switch (action.type) {
     case FETCH_FRIEND_START:
