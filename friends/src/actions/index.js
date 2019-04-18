@@ -6,6 +6,8 @@ export const FETCH_FRIEND_SUCCESS = 'FETCH_FRIEND_SUCCESS';
 export const FETCH_FRIEND_FAILURE = 'FETCH_FRIEND_FAILURE';
 
 
+
+
 export const getFriends = () => dispatch => {
   dispatch({ tyep: FETCH_FRIEND_START });
 

@@ -1,19 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Router, Route, Link } from 'react-router-dom';
 import LogInPage from './components/LogInPage';
+import PrivateRoute from './components/PrivateRoute'
 
 import './App.css';
 
-class App extends Component {
-  render() {
+function App() {
+  
     return (
-      <div className="App">
-        <header className="App-header">
-        <h1>I am here</h1>
-          <LogInPage />
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <ul>
+            <li>
+              <Link to='/login'>Login</Link>
+            </li>
+            <li>
+              <Link to='/protected'>Protected Page</Link>
+            </li>
+          </ul>
+           <Route path='/login' component={LogInPage} />
+          <PrivateRoute exact path='/protected' component={} />
+          
+        </div>
+      </Router>
     );
-  }
+  
 }
 
 export default App;

@@ -1,9 +1,9 @@
-import * as actionTypes from '../actions';
+import { FETCH_FRIEND_START } from '../actions';
 
 const initialState = {
+  friends: [],
   deletingFriend: false,
   fetchingFriends: false,
-  friends: [],
   loggingIn: false,
   savingFriends: false,
   updatingFriend: false,
@@ -13,7 +13,8 @@ const initialState = {
 export const logReducer = (state = initialState, action) => {
   console.log('reducer', action)
   switch (action.type) {
-    case actionTypes.FETCH_FRIEND_START:
+    case LOGIN_START:
+    case FETCH_FRIEND_START:
     return {
       ...state,
       fetchingFriends: true
