@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import LogInPage from './components/LogInPage';
 import PrivateRoute from './components/PrivateRoute';
 import FriendsList from './components/FriendsList';
@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   
     return (
-      <Router>
+      <BrowserRouter>
         <div className="App">
           <ul>
             <li>
@@ -23,7 +23,7 @@ function App() {
           <PrivateRoute exact path='/protected' component={FriendsList} />
           
         </div>
-      </Router>
+      </BrowserRouter>
     );
   
 }

@@ -21,11 +21,22 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
   console.log('reducer', action)
   switch (action.type) {
+    case LOGIN_START:
     case FETCH_FRIEND_START:
-    return {
-      ...state,
-      fetchingFriends: true
-    };
+      return {
+        ...state,
+        fetchingFriends: true
+      };
+
+    case LOGIN_SUCCESS:
+      console.log(action.payload);
+
+      localStorage.setItem('token', action.payload.payload);
+
+      return {
+        ...state,
+        fetchingData: false
+      };
 
     case FETCH_FRIEND_SUCCESS:
     console.log(action.payload.results)
